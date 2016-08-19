@@ -1,0 +1,9 @@
+(1) unzip                        ----> 解压zip文件
+(2) tar -zxvf                    ----> 解压tar.gz文件
+(3) 设置静态ip
+    [1]:vim /etc/sysconfig/network-scripts/ifcfg-eno16777736
+            BOOTPROTO=static
+            IPADDR0=192.168.179.128
+            PREFIXO0=24
+            GATEWAY0=192.168.0.1
+    [2]:service network restart
