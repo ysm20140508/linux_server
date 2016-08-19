@@ -7,3 +7,6 @@
             PREFIXO0=24
             GATEWAY0=192.168.0.1
     [2]:service network restart
+(4) netstat -apn | grep 9200    -----> 查看某个端口是否被占用
+(5) ps -ef | grep tomcat        -----> 查找对应进程的id
+(6) kill -9                     -----> 杀死对应进程
