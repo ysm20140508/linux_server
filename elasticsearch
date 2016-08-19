@@ -1,0 +1,7 @@
+注意：虚拟机上安装elasticsearch
+
+(1)下载jdk 配置jdk环境变量
+(2)在elasticsearch下载官方包  解压  地址: https://www.elastic.co/downloads/elasticsearch
+(3)修改config目录下 elasticsearch.yml文件network.host配置为0.0.0.0  不然外网访问不了虚拟机的es
+(4)bin目录下 ./elasticsearch  启动es
+(5)ip:9200 访问es
