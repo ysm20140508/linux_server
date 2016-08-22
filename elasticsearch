@@ -1,11 +1,15 @@
 注意：虚拟机上安装elasticsearch
 
+
+==============================================================================《安装》=========================================================================================
 (1)下载jdk 配置jdk环境变量
 (2)在elasticsearch下载官方包  解压  地址: https://www.elastic.co/downloads/elasticsearch
 (3)修改config目录下 elasticsearch.yml文件network.host配置为0.0.0.0  不然本地访问不了虚拟机的es
 (4)bin目录下 ./elasticsearch  启动es
 (5)ip:9200 访问es
 
+
+===============================================================================《官方文档命令》=================================================================================
 (1)curl localhost:9200/_cat/health?v          查看es集群状况
 (2)curl localhost:9200/_cat/nodes?v           查看es节点情况
 (3)curl localhost:9200/_cat/indices?v         查看所有的index
@@ -20,3 +24,11 @@
 (8)curl -DELETE localhost:9200/customer/type1/1?pretty  删除document
 (9)curl -XPOST 'localhost:9200/customer/type1/_bulk?pretty' -d '{"index":{"_id":"1"}} {"name": "John Doe" }{"index":{"_id":"2"}}{"name": "Jane Doe" } 批量更新
 (10)curl -XPOST 'localhost:9200/customer/type1/_bulk?pretty' -d '{"update":{"_id":"1"}}{"doc": { "name": "John Doe becomes Jane Doe" } }{"delete":{"_id":"2"}}' 批量操作
+
+
+===============================================================================《java API访问服务》==========================================================================
+(1)elasticsearch.yml配置增加 transport.tcp.port: 9300
+(2)防火墙开放9300端口号
+(3)java API调用服务例子：https://github.com/ysm20140508/java
+
+

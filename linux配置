@@ -1,0 +1,11 @@
+(1) 设置静态ip
+    [1]:vim /etc/sysconfig/network-scripts/ifcfg-eno16777736
+            BOOTPROTO=static
+            IPADDR0=192.168.179.128
+            PREFIXO0=24
+            GATEWAY0=192.168.0.1
+    [2]:service network restart
+
+(2) Centos 7 开放指定端口
+    [1]:firewall-cmd --zone=public --add-port=9300/tcp --permanent   开启端口
+    [2]:firewall-cmd --reload 重启防火墙
