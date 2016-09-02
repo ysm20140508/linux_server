@@ -9,3 +9,13 @@
 (2) Centos 7 开放指定端口
     [1]:firewall-cmd --zone=public --add-port=9300/tcp --permanent   开启端口
     [2]:firewall-cmd --reload 重启防火墙
+
+
+(3) Centos 7 优化最大句柄数和进程数
+    [1]:vim /etc/security/limits.d/90-nproc.conf
+            * soft nproc 65535
+    [2]:vim /etc/security/limits.conf
+            * soft nproc  65535
+            * hard nproc  65535
+            * soft nofile 65535
+            * hard nofile 65535

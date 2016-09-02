@@ -1,5 +1,7 @@
-(1) unzip                        ----> 解压zip文件
-(2) tar -zxvf                    ----> 解压tar.gz文件
-(3) netstat -apn | grep 9200    -----> 查看某个端口是否被占用
-(4) ps -ef | grep tomcat        -----> 查找对应进程的id
-(5) kill -9                     -----> 杀死对应进程
+(1) unzip                                  -----> 解压zip文件
+(2) tar -zxvf                              -----> 解压tar.gz文件
+(3) netstat -apn | grep 9200               -----> 查看某个端口是否被占用
+(4) ps -ef | grep tomcat                   -----> 查找对应进程的id
+(5) kill -9                                -----> 杀死对应进程
+(6) ulimit -a                              -----> 查看限制数
+(7) firewall-cmd --list-ports              -----> 查看开放的端口号
