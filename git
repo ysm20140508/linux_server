@@ -11,7 +11,7 @@
 
 (4) git使用的一般流程
     [1]  git init  初始化仓库
-    [2]  git config --global user.name "Your Name Comes Here"        配置账号信息
+    [2]  git config --global user.name "Your Name Comes Here"         配置账号信息
          git config --global user.email you@yourdomain.example.com
 
     [3]  git add {file}  添加文件
