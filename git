@@ -1,0 +1,23 @@
+(1) git 安装
+    yum install git
+
+(2) git --help tutorial     git教程
+    git --help {command}    相关命令的教程
+
+(3) git 对比 svn 好处
+    [1] git在本地有克隆库,在无网情况下 可以提交,创建分支,查看版本历史
+    [2] git分支切换,合并方便
+    [3] git是分布式的
+
+(4) git使用的一般流程
+    [1]  git init  初始化仓库
+    [2]  git config --global user.name "Your Name Comes Here"        配置账号信息
+         git config --global user.email you@yourdomain.example.com
+
+    [3]  git add {file}  添加文件
+    [4]  git commit -m {msg} 提交
+    [5]  git branch {name}  创建分支
+    [6]  git checkout {branch} 切换分支
+    [7]  git merge {branch} 合并分支
+    [8]  git log -p 查看详细日志
+    [9]  git diff --cached 对比本地改变的内容

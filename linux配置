@@ -19,3 +19,12 @@
             * hard nproc  65535
             * soft nofile 65535
             * hard nofile 65535
+
+
+(4) elasticSearch 随机启动
+    [1]:vim /etc/rc.d/rc.local
+       export JAVA_HOME=/home/dev/jdk/jdk1.8.0_101
+       export PATH=$JAVA_HOME/bin:$PATH
+       export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+       sudo -E -u coder  -p 12345678  sh /home/coder/es/elasticsearch-2.3.5/bin/elasticsearch -d
+

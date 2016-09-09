@@ -1,0 +1,18 @@
+(1)  vim  /etc/yum.repos.d/mongodb-org-3.2.repo
+     内容 [mongodb-org-3.2]
+          name=MongoDB Repository
+          baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/
+          gpgcheck=1
+          enabled=1
+          gpgkey=https://www.mongodb.org/static/pgp/server-3.2.asc
+
+(2)  sudo yum install -y mongodb-org  ---> 安装最新稳定版本
+     sudo yum install -y mongodb-org-3.2.9 mongodb-org-server-3.2.9 mongodb-org-shell-3.2.9 mongodb-org-mongos-3.2.9 mongodb-org-tools-3.2.9  ---> 指定版本安装
+
+(3)  sudo service mongod start   启动mongoDB
+(4)  sudo chkconfig mongod on    检测mongoDB是否启动成功
+(5)  sudo service mongod stop    停止mongoDB
+(6)  sudo service mongod restart 重启mongoDB
+(7)  sudo yum erase $(rpm -qa | grep mongodb-org)    删除mongoDB安装包
+(8)  sudo rm -r /var/log/mongodb
+     sudo rm -r /var/lib/mongo                       删除mongoDB日志和库

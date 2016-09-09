@@ -5,3 +5,6 @@
 (5) kill -9                                -----> 杀死对应进程
 (6) ulimit -a                              -----> 查看限制数
 (7) firewall-cmd --list-ports              -----> 查看开放的端口号
+(8) sudo -u username -p password           -----> 指定用户名和密码授权
+(9) sudo -U username -l                    -----> 指定用户的列表权限
+(10)systemctl status rc-local.service      -----> 查看服务启动状态
