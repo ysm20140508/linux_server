@@ -1,0 +1,15 @@
+(1)安装
+   sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat-stable/jenkins.repo
+   sudo rpm --import http://pkg.jenkins.io/redhat-stable/jenkins.io.key
+   yum install jenkins
+
+(2)开启防火墙
+   firewall-cmd --zone=public --add-port=8080/tcp --permanent
+   firewall-cmd --zone=public --add-service=http --permanent
+   firewall-cmd --reload
+
+(3)验证码
+   vim /var/lib/jenkins/secrets/initialAdminPassword
+
+
+======================================================================自动化部署github项目=========================================================================

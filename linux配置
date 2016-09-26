@@ -8,7 +8,8 @@
 
 (2) Centos 7 开放指定端口
     [1]:firewall-cmd --zone=public --add-port=9300/tcp --permanent   开启端口
-    [2]:firewall-cmd --reload 重启防火墙
+    [2]:firewall-cmd --zone=public --add-service=http --permanent    开始http
+    [3]:firewall-cmd --reload 重启防火墙
 
 
 (3) Centos 7 优化最大句柄数和进程数
