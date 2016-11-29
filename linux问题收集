@@ -1,2 +1,7 @@
 (1) sudo：抱歉，您必须拥有一个终端来执行 sudo
     sudo vi /etc/sudoers   将Default requiretty注释掉
+
+(2) Network is unreachable
+    [1] vim vim /etc/sysconfig/network-scripts/ifcfg-eno16777736
+        ONBOOT=no   no改成yes
+    [2] reboot

@@ -29,3 +29,8 @@
        export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
        sudo -E -u coder  -p 12345678  sh /home/coder/es/elasticsearch-2.3.5/bin/elasticsearch -d
 
+(5) 修改vm参数
+    [1]:sysctl -w vm.max_map_count=65535
+
+
+
