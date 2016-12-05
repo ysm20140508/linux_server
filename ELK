@@ -1,0 +1,32 @@
+(1) logstash elasticsearch kibana下载
+    [1]:logstash: https://www.elastic.co/downloads/logstash
+    [2]:elasticsearch: https://www.elastic.co/downloads/elasticsearch
+    [3]:kibana: https://www.elastic.co/downloads/kibana
+    [4]:下载, 解压对应的包
+
+(2) 启动elasticseach
+    [1]:修改 elasticsearch.yml配置文件 network.host：0.0.0.0
+    [2]:./elasticseach -d 启动
+
+(3) 编写logstash 配置文件 启动
+    [1]:one-pipeline.conf
+           input{
+             file {
+                path => "/var/log/*"
+                start_position => "beginning"
+             }
+           }
+
+           output{
+              elasticsearch {
+                 hosts => ["localhost"]
+             }
+    [2]:./logstash -f config/one-pipeline.conf 启动
+    [3]:input插件  https://www.elastic.co/guide/en/logstash/current/input-plugins.html
+    [4]:output插件 https://www.elastic.co/guide/en/logstash/current/output-plugins.html
+
+(4) 启动kibana
+    [1]:修改kibana.yml配置文件 server.host:ip   elasticsearch.url:ip
+    [2]:./kibana 启动
+
+

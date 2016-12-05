@@ -9,3 +9,4 @@
 (9) sudo -U username -l                    -----> 指定用户的列表权限
 (10)systemctl status rc-local.service      -----> 查看服务启动状态
 (11)scp root@ip:目标文件  本地文件            -----> 服务器间拷贝文件
+(12)tail -1000f                            -----> 查看日志文件

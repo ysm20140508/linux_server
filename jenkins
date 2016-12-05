@@ -3,13 +3,31 @@
    sudo rpm --import http://pkg.jenkins.io/redhat-stable/jenkins.io.key
    yum install jenkins
 
-(2)开启防火墙
-   firewall-cmd --zone=public --add-port=8080/tcp --permanent
-   firewall-cmd --zone=public --add-service=http --permanent
-   firewall-cmd --reload
+(2)修改Jenkins配置文件 注:(不配置 导致找不到java执行目录或者权限不够)
+   [1] /etc/sysconfig/jenkins   JENKINS_USER="root"
+   [2] /etc/sysconfig/jenkins   JENKINS_JAVA_CMD="java_path/bin/java" 或者 /etc/init.d/jenkins candidates=java_path/bin/java
 
-(3)验证码
+(3)service jenkins start (记得重启几次)
+
+(4)验证码
    vim /var/lib/jenkins/secrets/initialAdminPassword
 
+(5)选择安装推荐的插件选项
 
 ===================================================================自动化部署github项目=========================================================================
+(1)安装gjthub插件
+    [1] 选择左边菜单《系统管理》===》《管理插件》
+    [2] 选中《可选插件》 《搜索框》输入github 选中要安装的github插件 点击《直接安装》 按钮
+
+(2)Global Tool Configuration
+    [1] jdk安装配置     1: jdk名称    2:jdk路径
+    [2] maven安装配置   1: maven名称  2：maven路径
+
+(3)创建任务
+    [1] 选中 General[GitHub project]  Project url：[https://github.com/ysm20140508/fundCrawLer/]
+    [2] 选中 源码管理的[Git]     Repository URL:[https://github.com/ysm20140508/fundCrawLer/]  	Credentials:[认证] Branch Specifier (blank for 'any')：[*/master]
+    [3] 选中 构建触发器的[build when a change is pushed to Github]
+    [4] 选中 构建环境的[Add timestamps to the Console Output]
+    [5] 选中 构建的[invoke top-level Maven targets]  	Maven Version：[maven名称]  Goals:[clean pack]
+    [6] 选中 构建的[Execute shell]  Command: [ BUILD_ID=dontKillMe 防止jenkins杀掉脚本启动服务进程
+                                             java -jar target/fundCrawler-1.0.jar &]
