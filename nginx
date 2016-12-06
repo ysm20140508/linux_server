@@ -1,0 +1,27 @@
+(1) 下载包
+    https://nginx.org/en/download.html
+(2) 安装编译工具及库文件
+    yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
+(3) ./configure  --prefix=/home/coder/nginx/nginx-configure (安装文件默认放在/usr/local/nginx)
+(4) make
+(5) make install
+(6) 查看nginx版本  /home/coder/nginx/nginx-configure/sbin/nginx  -v
+(7) 增加配置      /home/coder/nginx/nginx.conf 增加 user root root (防止出现404 Forbidden错误)
+(8) 启动nginx    /home/coder/nginx/nginx-configure/sbin/nginx
+(9  Nginx其他命令
+                /home/coder/nginx/nginx-configure/sbin/nginx -s reload   重新载入配置文件
+                /home/coder/nginx/nginx-configure/sbin/nginx -s reopen   重启 Nginx
+                /home/coder/nginx/nginx-configure/sbin/nginx -s stop     停止 Nginx
+                /home/coder/nginx/nginx-configure/sbin/nginx -s quit     优雅停止 Nginx
+                /home/coder/nginx/nginx-configure/sbin/nginx -h          帮助命令
+                /home/coder/nginx/nginx-configure/sbin/nginx -V          nginx版本,编译版本,configure 参数
+                /home/coder/nginx/nginx-configure/sbin/nginx -t          测试配置文件的正确性
+
+===========================================================================《加载module》===================================================================================
+(1) 获取module包,解压
+    wget http://labs.frickle.com/files/ngx_cache_purge-2.1.tar.gz
+(2) /home/coder/nginx/nginx-configure/sbin/nginx  -V  查看configure信息
+(3) configure信息 加 --add-module=../ngx_cache_purge-2.1
+(4) make (make)
+(5) cp /home/coder/nginx/nginx-configure/sbin/nginx /home/coder/nginx/nginx-configure/sbin/nginx.bak (备份执行文件)
+(6) cp ./objs/nginx /home/coder/nginx/nginx-configure/sbin/nginx (覆盖旧的nginx执行文件)
